@@ -20,7 +20,12 @@ schemaVersion: 2.1.0
        - id: prepare-default-settings
          exec:
            component: theia-ide
-           commandLine: | ls
+           commandLine: |
+             ls /opt/app-root/src/.theia/settings.json || echo '{
+               "debug.internalConsoleOptions": "neverOpen",
+               "python.linting.pylintEnabled": true,
+               "python.defaultInterpreterPath": "/opt/app-root/bin/python"
+             }' > /opt/app-root/src/.theia/settings.json
      events:
        preStart:
          - init-remote-runtime-injector
