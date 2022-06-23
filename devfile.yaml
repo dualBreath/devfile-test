@@ -20,7 +20,7 @@ schemaVersion: 2.1.0
        - id: prepare-default-settings
          exec:
            component: theia-ide
-           commandLine: ls
+           commandLine: | ls
      events:
        preStart:
          - init-remote-runtime-injector
