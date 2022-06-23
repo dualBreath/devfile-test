@@ -20,7 +20,8 @@ attributes:
       - id: prepare-default-settings
           exec:
             component: theia-ide
-            commandLine: echo ok
+            commandLine: |
+             echo ok
     events:
       preStart:
         - init-remote-runtime-injector
