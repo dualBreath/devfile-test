@@ -20,8 +20,6 @@ attributes:
     events:
       preStart:
         - init-remote-runtime-injector
-      postStart:
-        - prepare-default-settings
     components:
       - name: theia-ide
         container:
