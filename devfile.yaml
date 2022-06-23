@@ -6,7 +6,7 @@ schemaVersion: 2.1.0
    - git:
        remotes:
          origin: 'https://github.com/robotframework/RobotDemo.git'
-     name: robot-demo
+   - name: robot-demo
  commands: []
  attributes:
    'che-editor.yaml': |
