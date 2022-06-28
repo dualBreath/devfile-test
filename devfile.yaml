@@ -67,6 +67,8 @@ attributes:
             - exposedPort: 3100
           che-theia.eclipse.org/vscode-preferences:
             robot.python.executable: '/opt/app-root/bin/python'
+            python.linting.pylintEnabled: true
+            python.defaultInterpreterPath: '/opt/app-root/bin/python'
       - name: plugins
         volume: {}
       - name: theia-local
