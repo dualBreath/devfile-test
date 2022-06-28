@@ -65,6 +65,8 @@ attributes:
           app.kubernetes.io/part-of: che-theia.eclipse.org
           ports:
             - exposedPort: 3100
+          che-theia.eclipse.org/vscode-preferences:
+            robot.python.executable: '/opt/app-root/bin/python'
       - name: plugins
         volume: {}
       - name: theia-local
