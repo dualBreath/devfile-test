@@ -1,13 +1,14 @@
-schemaVersion: 2.1.0
+
+schemaVersion: '2.1.0',
 metadata:
-  name: test
-  version: 2.1.0
-projects:
+  version: '2.1.0'
+  name: 'test_devfile_robot'
+  namespace: undefined
+projects: 
   - git:
       remotes:
         origin: 'https://github.com/robotframework/RobotDemo.git'
     name: robot-demo
-commands: []
 attributes:
   'che-editor.yaml': |
     schemaVersion: 2.1.0
@@ -24,7 +25,8 @@ attributes:
             ls /opt/app-root/src/.theia/settings.json || echo '{
               "debug.internalConsoleOptions": "neverOpen",
               "python.linting.pylintEnabled": true,
-              "python.defaultInterpreterPath": "/opt/app-root/bin/python"
+              "python.defaultInterpreterPath": "/opt/app-root/bin/python",
+              "robot.python.executable": "/opt/app-root/bin/python"
             }' > /opt/app-root/src/.theia/settings.json
     events:
       preStart:
@@ -34,12 +36,12 @@ attributes:
     components:
       - name: theia-ide
         container:
-          image: 'artifactory-ito.spirenteng.com/velocity-docker-builds/ide/web-ide/velocity-ide:che-ide-test-005'
+          image: 'artifactory-ito.spirenteng.com/velocity-docker-builds/ide/web-ide/velocity-ide:che-35'
           env:
             - name: THEIA_PLUGINS
-              value: 'local-dir:///plugins'
+              value: local-dir:///plugins
             - name: IDE_FLEXLM_LICENSE_SERVER
-              value: 27000@192.168.9.39
+              value: 27000@englshost.spirenteng.com
           volumeMounts:
             - name: plugins
               path: /plugins
@@ -71,7 +73,7 @@ attributes:
         volume: {}
       - name: che-machine-exec
         container:
-          image: 'quay.io/eclipse/che-machine-exec:next'
+          image: quay.io/eclipse/che-machine-exec:next
           memoryLimit: 128Mi
           memoryRequest: 32Mi
           cpuLimit: 500m
@@ -79,9 +81,9 @@ attributes:
           command:
             - /go/bin/che-machine-exec
             - '--url'
-            - '127.0.0.1:3333'
+            - 127.0.0.1:3333
             - '--idle-timeout'
-            - '15m'
+            - 15m
           endpoints:
             - name: terminal
               targetPort: 3333
@@ -103,7 +105,7 @@ attributes:
           app.kubernetes.io/component: remote-runtime-injector
           app.kubernetes.io/part-of: che-theia.eclipse.org
         container:
-          image: 'quay.io/eclipse/che-theia-endpoint-runtime-binary:next'
+          image: quay.io/eclipse/che-theia-endpoint-runtime-binary:next
           memoryLimit: 128Mi
           memoryRequest: 32Mi
           cpuLimit: 500m
