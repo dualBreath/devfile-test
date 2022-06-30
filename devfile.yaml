@@ -41,7 +41,6 @@ attributes:
           endpoints:
             - name: theia
               exposure: public
-              secure: true
               targetPort: 3100
               attributes:
                 type: main
@@ -52,7 +51,6 @@ attributes:
             - name: webviews
               targetPort: 3100
               exposure: public
-              secure: true
               protocol: http
               attributes:
                 type: webview
@@ -63,7 +61,6 @@ attributes:
             - name: mini-browser
               targetPort: 3100
               exposure: public
-              secure: true
               protocol: http
               attributes:
                 type: mini-browser
