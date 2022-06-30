@@ -17,25 +17,9 @@ attributes:
       - id: init-remote-runtime-injector
         apply:
           component: remote-runtime-injector
-      - id: prepare-default-settings
-        exec:
-          component: theia-ide
-          commandLine: |
-            rm /opt/app-root/src/.theia/settings.json | echo '{
-              "robot.libraries.libdoc.needsArgs": [
-                "remote",
-                "fakerlib"
-              ],
-              "debug.internalConsoleOptions": "neverOpen",
-              "python.linting.pylintEnabled": true,
-              "python.defaultInterpreterPath": "/opt/app-root/bin/python",
-              "robot.python.executable": "/opt/app-root/bin/python"
-            }' > /opt/app-root/src/.theia/settings.json
     events:
       preStart:
         - init-remote-runtime-injector
-      postStart:
-        - prepare-default-settings
     components:
       - name: theia-ide
         container:
@@ -70,6 +54,10 @@ attributes:
           app.kubernetes.io/part-of: che-theia.eclipse.org
           ports:
             - exposedPort: 3100
+          che-theia.eclipse.org/vscode-preferences:
+            debug.internalConsoleOptions: neverOpen
+            python.linting.pylintEnabled: true
+            robot.python.executable: /opt/app-root/bin/python
       - name: plugins
         volume: {}
       - name: theia-local
