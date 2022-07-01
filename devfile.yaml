@@ -47,10 +47,11 @@ attributes:
                 cookiesAuthEnabled: true
                 discoverable: false
                 urlRewriteSupported: true
-              protocol: https
+              protocol: http
             - name: webviews
               targetPort: 3100
               exposure: public
+              secure: true
               protocol: https
               attributes:
                 type: webview
@@ -61,7 +62,8 @@ attributes:
             - name: mini-browser
               targetPort: 3100
               exposure: public
-              protocol: https
+              secure: true
+              protocol: http
               attributes:
                 type: mini-browser
                 cookiesAuthEnabled: true
@@ -71,7 +73,7 @@ attributes:
             - name: theia-dev
               targetPort: 3130
               exposure: public
-              protocol: https
+              protocol: http
               attributes:
                 type: ide-dev
                 discoverable: false
@@ -79,21 +81,21 @@ attributes:
             - name: theia-redirect-1
               targetPort: 13131
               exposure: public
-              protocol: https
+              protocol: http
               attributes:
                 discoverable: false
                 urlRewriteSupported: true
             - name: theia-redirect-2
               targetPort: 13132
               exposure: public
-              protocol: https
+              protocol: http
               attributes:
                 discoverable: false
                 urlRewriteSupported: true
             - name: theia-redirect-3
               targetPort: 13133
               exposure: public
-              protocol: https
+              protocol: http
               attributes:
                 discoverable: false
                 urlRewriteSupported: true
