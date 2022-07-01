@@ -5,7 +5,7 @@ metadata:
 projects:
   - git:
       remotes:
-        origin: 'https://github.com/robotframework/RobotDemo.git'
+        origin: 'https://git-ito.spirenteng.com/velocity/ide/che-dashboard'
     name: robot-demo
 commands: []
 attributes:
