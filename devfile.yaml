@@ -52,7 +52,7 @@ attributes:
               targetPort: 3100
               exposure: public
               secure: true
-              protocol: https
+              protocol: http
               attributes:
                 type: webview
                 cookiesAuthEnabled: true
