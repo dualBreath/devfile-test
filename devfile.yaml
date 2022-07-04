@@ -62,6 +62,7 @@ attributes:
             - name: mini-browser
               targetPort: 3100
               exposure: public
+              secure: false
               protocol: https
               attributes:
                 type: mini-browser
