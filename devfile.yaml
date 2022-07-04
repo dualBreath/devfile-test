@@ -62,8 +62,7 @@ attributes:
             - name: mini-browser
               targetPort: 3100
               exposure: public
-              secure: true
-              protocol: http
+              protocol: https
               attributes:
                 type: mini-browser
                 cookiesAuthEnabled: true
