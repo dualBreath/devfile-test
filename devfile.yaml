@@ -23,7 +23,7 @@ attributes:
     components:
       - name: theia-ide
         container:
-          image: 'artifactory-ito.spirenteng.com/velocity-docker-builds/ide/web-ide/velocity-ide:test-mini-browser-4'
+          image: 'artifactory-ito.spirenteng.com/velocity-docker-builds/ide/web-ide/velocity-ide:che-ide-28447'
           env:
             - name: THEIA_PLUGINS
               value: 'local-dir:///plugins'
