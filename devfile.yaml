@@ -112,6 +112,7 @@ attributes:
             debug.internalConsoleOptions: neverOpen
             python.linting.pylintEnabled: true
             robot.python.executable: /opt/app-root/bin/python
+            che.welcome.enable: false
       - name: plugins
         volume: {}
       - name: theia-local
